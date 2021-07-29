@@ -20,5 +20,8 @@ Imports:
     rnaturalearth,
     patchwork,
     ggrepel,
-    ggridges
+    ggridges,
+    webshot,
+    directlabels,
+    gt
 RoxygenNote: 6.1.1

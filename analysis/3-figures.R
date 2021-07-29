@@ -15,7 +15,6 @@ w2col <- 190
 # (Generated in QGIS)
 
 # Figure B: Radiocarbon chronology of sites used in the analysis
-# TODO: Broken
 figB <- plot_chronology(sites, radiocarbon_sum, cultural_periods)
 ggsave("analysis/figures/figB.pdf", figB, device = cairo_pdf,
        width = w2col, height = w2col * 2/3, units = "mm")
@@ -25,7 +24,7 @@ ggsave("analysis/figures/figB.pdf", figB, device = cairo_pdf,
 figC <- plot_mcts(gazella_sim, Z, climate_periods, "Relative body size (Z)",
                   consolidate = TRUE)
 ggsave("analysis/figures/figC.pdf", figC, device = cairo_pdf,
-        width = 190, height = 65, units = "mm")
+        width = w2col, height = w2col * 1/3, units = "mm")
 
 # Figure D: Relative body size of gazelle through time, using specific element
 #   measurements: Astragalus GLl and Bd
@@ -37,7 +36,7 @@ figD2 <- plot_mcts(filter(gazella_sim, Element == "Astragalus"), Bd,
 
 figD <- figD1 / figD2
 ggsave("analysis/figures/figD.pdf", figD, device = cairo_pdf,
-       width = 190, height = 130, units = "mm")
+       width = w2col, height = w2col * 2/3, units = "mm")
 
 # Figure E: Distributions of relative body size at all sites, arranged by date.
 #   Only sites with N > 25 are included.
@@ -65,14 +64,14 @@ gazella %>%
   figE
 
 ggsave("analysis/figures/figE.pdf", figE, device = cairo_pdf,
-       width = 140, height = 140, units = "mm")
+       width = w1col, height = w1col * 1.5, units = "mm")
 
 # Figure F: Relative body size of Lepus through time, using all elements and
 #   measurements.
 figF <- plot_mcts(lepus_sim, Z, climate_periods, "Relative body size (Z)",
                   consolidate = TRUE)
 ggsave("analysis/figures/figF.pdf", figF, device = cairo_pdf,
-       width = 190, height = 50, units = "mm")
+       width = w2col, height = w2col * 1/3, units = "mm")
 
 # Figure G: Relative body size of Vulpes through time, using all elements and
 #   measurements
@@ -86,9 +85,10 @@ ggsave("analysis/figures/figG.pdf", figG, device = cairo_pdf,
 figH <- ggplot() +
   geom_sf(data = ne_afroeurasia, fill = "white") +
   geom_sf(data = iucn_ranges, mapping = aes(fill = binomial), alpha = 0.7, colour = NA) +
-  scale_fill_brewer(palette = "Paired", name = NULL) +
+  scale_fill_manual(values = rep(c("#e41a1c", "#377eb8"), 3), name = NULL) +
   scale_x_continuous(breaks = seq(from = -180, to = 180, by = 30)) +
   scale_y_continuous(breaks = seq(from = 80, to = -80, by = -30)) +
+  # coord_sf() +
   facet_wrap(vars(genus), nrow = 1) +
   theme_minlines() +
   theme(strip.text = element_text(face = "italic"),
@@ -98,7 +98,7 @@ figH <- ggplot() +
         axis.text = element_blank(),
         axis.ticks = element_blank())
 ggsave("analysis/figures/figH.pdf", figH, device = cairo_pdf,
-       width = 190, height = 80, units = "mm")
+       width = w1.5col, height = w1.5col * 2/3, units = "mm")
 
 # Figure I: comparison of Z distributions at adjacent sites:
 # * Wadi Jilat EPAL vs. Neo
@@ -146,14 +146,42 @@ gazella_adj$Period <- factor(gazella_adj$Period, levels = c("Neolithic",
 figI <- ggplot(gazella_adj, aes(x = Z, label = Period, colour = Period)) +
   facet_wrap(vars(Site), nrow = 1) +
   geom_density(fill = NA) +
-  scale_colour_manual(values = rep(c("red", "blue"), 3)) +
+  scale_colour_manual(values = rep(c("#e41a1c", "#377eb8"), 3), guide = guide_none()) +
   scale_x_continuous(limits = c(-4.5, 4.5), breaks = seq(-4, 4, by = 1)) +
   labs(x = "Relative body size (Z)", y = NULL) +
   theme_minlines()
-figI <- direct.label(figI, method = "top.bumptwice")
+figI <- direct.label(figI, method = list("top.bumptwice", fontfamily = "Arial", cex = 0.65))
 ggsave("analysis/figures/figI.pdf", figI, device = cairo_pdf,
-       width = 190, height = 65, units = "mm")
+       width = w2col, height = w2col * 1/3, units = "mm")
 
+# Figure I: Histogram of gazelle scapula BG (showing sexual dimorphism)
+figJ <- gazella %>%
+  filter(Element == "Scapula") %>%
+  filter(!is.na(GLP) | !is.na(BG)) %>%
+  select(Site, SiteCode, Specimen, GLP, BG) %>%
+  mutate(Period = recode(SiteCode,
+                         "AQA" = "Early Epipal.",
+                         "AQB" = "Early Epipal.",
+                         "KHIV" = "Early Epipal.",
+                         "KHIV_A" = "Early Epipal.",
+                         "KHIV_B" = "Early Epipal.",
+                         "KHIV_C" = "Early Epipal.",
+                         "KHIV_D" = "Early Epipal.",
+                         "SHUB1_Early" = "Mid–Late Epipal.",
+                         "SHUB1_Late" = "Mid–Late Epipal.",
+                         "SHUB6_Early" = "Mid–Late Epipal.",
+                         "WJ13" = "Neolithic",
+                         "WJ22_Middle" = "Mid–Late Epipal.",
+                         "WJ22_Upper" = "Mid–Late Epipal.",
+                         "WJ6_Upper" = "Early Epipal.",
+                         "WJ7" = "Neolithic")) %>%
+  ggplot(aes(x = BG, fill = Period)) +
+  geom_histogram(binwidth = 0.2) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(x = "Scapula BG", y = NULL) +
+  theme_minlines()
+ggsave("analysis/figures/figJ.pdf", figJ, device = cairo_pdf,
+       width = w1.5col, height = w1.5col * 2/3, units = "mm")
 
 # Table A: Sample sizes used in metric analysis, by taxon and period
 bind_rows(Gazella = gazella, Lepus = lepus, Vulpes = vulpes, .id = "Taxon") %>%
@@ -207,4 +235,4 @@ bind_rows(Gazella = gazella, Lepus = lepus, Vulpes = vulpes, .id = "Taxon") %>%
   cols_label(Age_cal_BP = "Age cal BP") %>%
   cols_align("left", vars(Period, Age_cal_BP)) ->
   tableA
-gtsave(tableA, "tableA.pdf", "analysis/figures")
+gtsave(tableA, "tableA.html", "analysis/figures")

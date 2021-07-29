@@ -1,0 +1,23 @@
+site,region,latitude,longitude,coord_source,sample
+Azraq/Ayn Qasiyya,Azraq basin,31.81607,36.82998,Garrard & Byrd 2013,full
+Burqu',Azraq basin,32.60844,37.96237,Betts 1998,full
+Dhuweila,Azraq basin,32.04300,37.36700,Betts 1988,full
+Jebel Naja,Azraq basin,31.96000,37.30000,Betts 1985,full
+Wadi Jilat,Azraq basin,31.50256,36.41304,Garrard & Byrd 2013,full
+Kharaneh IV,Azraq basin,31.72369,36.45427,Garrard & Byrd 2013,full
+Shubayqa,Azraq basin,32.40644,37.22810,Richter et al. 2017,full
+Uwaynid,Azraq basin,31.78367,36.73043,Garrard & Byrd 2013,full
+el-Wad,Mount Carmel,32.6711,34.9653,,comparison
+Hefzibah,Mount Carmel,,,,comparison
+Nahal Hadera V,Mount Carmel,,,,comparison
+Neve David,Mount Carmel,,,,comparison
+Raqefet Cave,Mount Carmel,32.6547,35.0725,,comparison
+HaYonim,Western Gallilee,32.9285,35.2451,,comparison
+Hilazon Tachtit,Western Gallilee,,,,comparison
+Kfar HaHoresh,Western Gallilee,,,,comparison
+Meged Rockshelter,Western Gallilee,32.9595,35.2678,,comparison
+Yiftah'el,Western Gallilee,32.7553,35.2286,,comparison
+Wadi Hammeh 27,,32.4693,35.6069,,comparison
+Mallaha,,33.1053,35.6094,,comparison
+Hatoula,,31.8256,34.9875,,comparison
+Ain Ghazal,,31.9878,35.9764,,comparison

@@ -1,0 +1,111 @@
+site_code,site_name,site_phase,context,lab_id,material,taxon,cra,error,d13C,outlier,reference
+WJ9,Jilat 9,,1-2a,OxA-519,bone,,21150,400,,0,Garrard and Byrd 2013
+WJ6_Lower,Jilat 6 (Lower),lower,1-14a,OxA-539 ,charcoal,,7980,150,,0,Garrard and Byrd 2013
+WJ6_Middle,Jilat 6 (Middle),middle,4-12a ,OxA-522,charcoal,,11740,180,,0,Garrard and Byrd 2013
+WJ6_Middle,Jilat 6 (Middle),middle,2-12a,OxA-523,bone,,11450,200,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,3-9a,AA-5494 ,charcoal,,16700,140,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,4-8a,OxA-524,charcoal,,15520,200,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,1-8a,AA-5492,charcoal,,15470,130,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,1-7b,AA-5491,charcoal,,16575,120,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,1-5a,OxA-525,charcoal,,16010,200,,0,Garrard and Byrd 2013
+WJ6_Upper,Jilat 6 (Upper),upper,2-3a,AA-5493,charcoal,,16695,120,,0,Garrard and Byrd 2013
+WJ10,Jilat 10,,7-11b,OxA-520,charcoal,,14790,200,,0,Garrard and Byrd 2013
+WJ10,Jilat 10,,43412,OxA-1000 ,charcoal,,13120,180,,0,Garrard and Byrd 2013
+WJ10,Jilat 10,,43412,OxA-918,charcoal,,12700,300,,0,Garrard and Byrd 2013
+WJ22_Lower,Jilat 22,lower,"1,4-17a",OxA-2410,charcoal,,13540,120,,0,Garrard and Byrd 2013
+WJ22_Lower,Jilat 22 ,lower,"1,4-17a",OxA-2409,charcoal,,13490,110,,0,Garrard and Byrd 2013
+WJ22_Middle,Jilat 22,middle,3-15b,OxA-1771,charcoal,,13040,180,,0,Garrard and Byrd 2013
+WJ22_Middle,Jilat 22 ,middle,3-15b,OxA-1772 ,charcoal,,12840,140,,0,Garrard and Byrd 2013
+WJ22_Upper,Jilat 22,upper,1-6b,OxA-1770,charcoal,,11920,180,,0,Garrard and Byrd 2013
+WJ8,Jilat 8,,3-4d,OxA-636,bone,,10540,160,,1,Garrard and Byrd 2013
+WJ8,Jilat 8,,3-4c,OxA-521,charcoal,,13310,120,,0,Garrard and Byrd 2013
+WJ7,Jilat 7,lower,A-34b ,OxA-1799,charcoal,,5840,100,,1,Garrard and Byrd 2013
+WJ7,Jilat 7,lower,A-34a,OxA-2413,charcoal,,8390,80,,0,Garrard and Byrd 2013
+WJ7,Jilat 7,middle,6-28a,OxA-526 ,charcoal,,8810,110,,0,Garrard and Byrd 2013
+WJ7,Jilat 7,middle,8-25a,OxA-527 ,charcoal,,8520,110,,0,Garrard and Byrd 2013
+WJ26,Jilat 26,,Ed-18a,OxA-2969,charcoal,,8740,110,,0,Garrard and Byrd 2013
+WJ26,Jilat 26,,C-12a,OxA-2407,charcoal,,8720,100,,0,Garrard and Byrd 2013
+WJ26,Jilat 26,,Cb-7a ,OxA-1802 ,charcoal,,8690,110,,0,Garrard and Byrd 2013
+WJ25,Jilat 25,,Aa-19a,OxA-2408,charcoal,,8020,80,,0,Garrard and Byrd 2013
+WJ13,Jilat 13,lower,A-21a,OxA-1800,charcoal,,7920,100,,0,Garrard and Byrd 2013
+WJ13,Jilat 13 ,lower,A-15a,OxA-1801,charcoal,,7870,100,,0,Garrard and Byrd 2013
+WJ13,Jilat 13,upper,C-24 ,OxA-2411,charcoal,,7900,80,,0,Garrard and Byrd 2013
+WJ13,Jilat 13,upper,C-22 ,UB-3462 ,charcoal,,7829,89,,0,Garrard and Byrd 2013
+WJ27,Jilat 27,,E-41a,OxA-1812,charcoal,,5270,90,,1,Garrard and Byrd 2013
+UW18_Lower,Uwaynid 18 (Lower),lower,9-19a,OxA-867,charcoal,,23200,400,,0,Garrard and Byrd 2013
+UW18_Upper,Uwaynid 18 (Upper),upper,1-3k,OxA-868,charcoal,,19500,250,,0,Garrard and Byrd 2013
+UW18_Upper,Uwaynid 18 (Upper),upper,5-15b ,OxA-864,charcoal,,19800,350,,0,Garrard and Byrd 2013
+UW14,Uwaynid 14 ,lower,43221,OxA-866,charcoal,,18400,250,,0,Garrard and Byrd 2013
+UW14,Uwaynid 14 ,upper,42278,OxA-865,charcoal,,18900,250,,0,Garrard and Byrd 2013
+AZ17,Azraq 17,lower,43415,OxA-869,charcoal,,13260,200,,0,Garrard and Byrd 2013
+AZ31,Azraq 31,lower,43374,OxA-870 ,charcoal,,8350,120,,0,Garrard and Byrd 2013
+AZ31,Azraq 31,upper,C-19b   ,OxA-2412,charcoal,,8275,80,,0,Garrard and Byrd 2013
+AZ31,Azraq 31,upper,14-107  ,OxA-871 ,bone,,1280,90,,1,Garrard and Byrd 2013
+DHW_PPNB,Dhuweila,Stage 1,2202/2133,OxA-1637,charcoal,,8350,100,,0,Betts et al. 1998
+DHW_PPNB,Dhuweila,Stage 1,,BM-2349,,,8190,60,,0,Betts et al. 1998
+DHW_LN,Dhuweila,Stage 2,4118,OxA-1729,charcoal,,7450,90,,0,Betts et al. 1998
+DHW_LN,Dhuweila,Stage 2,4225,OxA-1728,charcoal,,7140,90,,0,Betts et al. 1998
+DHW_LN,Dhuweila,Stage 2,2202/4217,OxA-1636,charcoal,,7030,90,,0,Betts et al. 1998
+BQ35,Burqu 35 ,,112,OxA-2770,charcoal,,8270,80,,0,Garrard pers. comm. 2018
+BQ35,Burqu 35 ,,208,OxA-2769,charcoal,,8180,80,,0,Garrard pers. comm. 2018
+BQ35,Burqu 35 ,,207,OxA-2768,charcoal,,8140,90,,0,Garrard pers. comm. 2018
+BQ27,Burqu 27 ,,142,OxA-2766,charcoal,,7930,80,,0,Garrard pers. comm. 2018
+BQ27,Burqu 27 ,,141,OxA-2765,charcoal,,7350,80,,0,Garrard pers. comm. 2018
+BQ27,Burqu 27 ,,132,OxA-2764,charcoal,,7270,80,,0,Garrard pers. comm. 2018
+BQ03,Burqu 03 ,,158,OxA-2808,charcoal,,6900,100,,0,Garrard pers. comm. 2018
+JN,Jebel Naja ,,408,OxA-375,charcoal,,7430,100,,0,Garrard pers. comm. 2018
+AQ1,Ayn Qasiyya (Section 1),,"Section 1, Context 56",OxA-18829,charcoal,Amygdalus,17550,75,-25.9,0,Richter et al. 2013
+AQA,Ayn Qasiyya A,,"Area A, Context 60",OxA18832,charcoal,Amygdalus,17495,75,-23.7,0,Richter et al. 2013
+AQA,Ayn Qasiyya A,,"Area A, Context 80",OxA18831,charcoal,Chenopodiaceae,17555,75,-11.3,0,Richter et al. 2013
+AQA,Ayn Qasiyya A,,"Area A, Context 81",Poz-33101,charcoal,Chenopodiaceae,19690,150,-15.8,1,Richter et al. 2013
+AQB,Ayn Qasiyya B,,"Area B, Context 1008",Poz-33103,charcoal,Tamarix,16960,110,-23.7,0,Richter et al. 2013
+AQD,Ayn Qasiyya D,,"Area D, 3004",Poz-33106,charcoal,Tamarix,16080,100,-25.4,0,Richter et al. 2013
+KHIV_B,Kharaneh IV (Phase B),B,"Area B, Sample 4 Ph. B",OxA-22287,charcoal,Chenopodiaceae,15980,60,-22.96,0,Richter et al. 2013
+KHIV_B,Kharaneh IV (Phase B),B,"Area B, Sample 10 Ph. B",OxA-22274,charcoal,indeterminate dicot,15770,80,-11.04,0,Richter et al. 2013
+KHIV_B,Kharaneh IV (Phase B),B,"Area B, Sample 6 Ph. B",OxA-22273,charcoal,Chenopodiaceae,15890,90,-23.85,0,Richter et al. 2013
+KHIV_A,Kharaneh IV (Phase A),A,"Area B, Sample 15 Ph. A",OxA-22288,charcoal,Chenopodiaceae,16275,60,-24.05,0,Richter et al. 2013
+KHIV_A,Kharaneh IV (Phase A),A,"Area B, Sample 19 Ph. A",OxA-22275,charcoal,indeterminate dicot,16145,75,-26.07,0,Richter et al. 2013
+KHIV_A,Kharaneh IV (Phase A),A,"Area B, Sample 25 Ph. A",OxA-22290,charcoal,Chenopodiaceae,16200,65,-24.49,0,Richter et al. 2013
+KHIV_A,Kharaneh IV (Phase A),A,"Area B, Sample 24 Ph. A",OxA-22289,charcoal,indeterminate dicot,16300,65,-10.16,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Area A, AP42.9C Ph. D",Poz-35078,plant,,15470,80,,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Area A, AS38.12 Ph. D",Poz-35080,plant,,15520,80,,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Area A, AP37.14 Ph. D",Poz-35081,plant,,15470,90,,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Area A, AP36.37 Ph. D",Poz-35082,plant,,15650,80,,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Area A, AP37.30 Ph. D",Poz-35083,plant,,15480,80,,0,Richter et al. 2013
+KHIV_B,Kharaneh IV (Phase B),B,S2/60 loc 15 Ph. B,Q-3075,bone,,13970,150,,1,Richter et al. 2013
+KHIV_C,Kharaneh IV (Phase C),C,S2/60 loc 6 Ph. C,Q-3074,bone,,12200,140,,1,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,D1/40 loc 5 Ph. D,Q-3073,bone,,10620,125,,1,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,D1/40 loc 1 Ph. D,Q-3072,bone,,9840,120,,1,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Phase D, A19.37",KN-4192,charcoal,,15200,450,,0,Richter et al. 2013
+KHIV_D,Kharaneh IV (Phase D),D,"Phase D, A19.37",KN-4193,charcoal,,15700,160,,0,Richter et al. 2013
+KHIV,Kharaneh IV ,,Pre? Phase D?,GrN-15193,charcoal,,14570,350,,1,Richter et al. 2013
+SHUB1_Early,Shubayqa 1 (Early),Phase VII,"Context 126, Sample #465",RTD-7948,plant,Bolboschoenus sp. (tuber),12166,55,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VII,SHUB1/105 ,RTD-7318,dung,gazelle dung (?),12310,60,-24.3,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VII,"Context 83, Sample #392",Beta-112146,plant,Bolboschoenus sp. (tuber),12289,46,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VII,"Context 86, Sample #399",RTD-7317,charcoal,Zilla sp. (wood charcoal),12332,46,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VII,"Context 120, Sample #455",RTD-7951,plant,Bolboschoenus sp. (tuber),12478,38,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 166, K25.14, Sample #430",RTD-7315,plant,Bolboschoenus sp. (tuber),12322,38,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 67, K28.9, Sample #293",RTD-7312,plant,Bolboschoenus sp. (tuber),12346,46,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 67, K26.16, Sample #268",RTD-7311,charcoal,Vitex sp. (wood charcoal),12367,65,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 67, K27.10, Sample #289",RTD-7313,charcoal,Zilla sp. (wood charcoal),12405,50,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 67, K27.10, Sample #294",RTD-7316,plant,Bolboschoenus sp. (tuber),12273,48,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 79, J27.11, Sample #384",RTD-7947,charcoal,Zilla sp. (wood charcoal),12337,46,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase VI,"Context 79, K26.16, Sample #361",RTD-7314,plant,Bolboschoenus sp. (tuber),12445,70,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase V,"Context 43, J26.7, Sample #76",RTK-6818,charcoal,Fraxinus sp. (wood charcoal),12477,76,,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase V,"Context 49, K26.10, Sample #70",RTK-6822,plant,Bolboschoenus sp. (tuber),12385,75,-24.2,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase V,"Context 50, J26.9, Sample #77",RTK-6821,plant,Hordeum spontaneum (grain),12385,78,-23,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase V,"Context 50, J26.11",RTK-6820,charcoal,Tamarix sp. (wood charcoal),12412,79,-25,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase V,"Context 50, J26.9",RTK-6823,charcoal,Tamarix sp. (wood charcoal),12321,78,-25,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase IV,"Context 26, J26.6, Sample #50",RTK-6816,charcoal,Tamarix sp. (wood charcoal),12344,85,-25,0,Richter et al. 2017
+SHUB1_Early,Shubayqa 1 (Early),Phase IV,"Context 32, I26.3, Sample #42",RTK-6813,charcoal,Tamarix sp. (wood charcoal),12389,78,-25,0,Richter et al. 2017
+SHUB1_Late,Shubayqa 1 (Late),Phase III,"Context 46, K24.8, Sample #72",RTK-6812,plant,Bolboschoenus sp. (tuber),11325,74,,0,Richter et al. 2017
+SHUB1_Late,Shubayqa 1 (Late),Phase II,"Context 20, K24.6, Sample #41",RTK-6819,charcoal,Fraxinus sp. (wood charcoal),11365,72,,0,Richter et al. 2017
+SHUB1_Late,Shubayqa 1 (Late),Phase II,"Context 40, L24.8, Sample #70",RTK-6817,charcoal,Chenopodiaceae (wood charcoal),11322,75,-11.5,0,Richter et al. 2017
+SHUB1_Final,Shubayqa 1 (Final),Phase I,"Area A/B, s. extension, Context 183, Sample #821",RTD-8904,charcoal,Zilla sp. (wood charcoal),10317,38,,0,Richter et al. 2017
+SHUB1_Final,Shubayqa 1 (Final),Phase I,Area C K11.10 #27,RTK-6814,charcoal,Tamarix sp. (wood charcoal),10229,70,-25,0,Richter et al. 2017
+SHUB1_Final,Shubayqa 1 (Final),Phase I,"Area A/B, s. extension, Context 174, Sample #782",RTD-8902,charcoal,Vitex sp. (wood charcoal),10107,53,,0,Richter et al. 2017
+SHUB1_Final,Shubayqa 1 (Final),Phase I,"Area A/B, s. extension, Context 180, Sample #800",RTD-8903,charcoal,Vitex sp. (wood charcoal),10095,52,,0,Richter et al. 2017
+SHUB1_Final,Shubayqa 1 (Final),Phase I,Area C K.11.10 #27,RTK-6815,plant,Hordeum spontaneum (grain),1229,54,-23.5,1,Richter et al. 2017
+SHUB6_Early,Shubayqa 6 (Early),LNAT/EPPNA,"Space 4, Context 250",RTD-9341,plant,Salicaceae,10035,43,,0,Richter pers. Comm. 2018
+SHUB6_Early,Shubayqa 6 (Early),LNAT/EPPNA,"Space 4, Context 186/256",RTD-9342,plant,Hordeum spontaneum,9962,42,,0,Richter pers. Comm. 2018
+SHUB6_Early,Shubayqa 6 (Early),LNAT/EPPNA,"Space 4, Context 264",RTD-9343,plant,Vitex ap,10072,43,,0,Richter pers. Comm. 2018

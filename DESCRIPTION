@@ -1,0 +1,24 @@
+Package: ejordanfaunamorph
+Type: Package
+Title: Eastern Jordan Palaeofaunal Morphometrics
+Version: 0.1.0
+Authors@R: person("Joe", "Roe", email = "joe@joeroe.io",
+            role = c("aut", "cre")) 
+Description: A morphometric analysis of faunal remains ('Gazella sp.' 
+    and ''Lepus sp.'') from Epipalaeolithic and Neolithic archaeological sites
+    in the eastern Jordanian 'badia', c. 25 – 7.5 ka. This package contains the
+    supplementary code for the paper CITATION.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: tidyverse
+Imports: 
+    magrittr,
+    reshape2,
+    rcarbon,
+    sf,
+    rnaturalearth,
+    patchwork,
+    ggrepel,
+    ggridges
+RoxygenNote: 6.1.1

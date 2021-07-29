@@ -3,7 +3,7 @@ theme_minlines <- function() {
   return(theme_linedraw(base_size = 7, base_family = "Arial") +
            theme(panel.grid.major.y = element_blank(),
                  panel.grid.minor.y = element_blank(),
-                 panel.grid.major.x = element_line(colour = "#333333"),
+                 panel.grid.major.x = element_line(colour = "#999999"),
                  panel.grid.minor.x = element_blank(),
                  strip.background = element_blank(),
                  strip.text = element_text(size = rel(1), colour = "black"),
@@ -66,6 +66,8 @@ plot_chronology <- function(sites, summed_dates, periods) {
     scale_y_continuous(expand = c(0.3, 0), sec.axis = dup_axis(breaks = 0)) +
     geom_area(fill = "black", colour = "black", size = 0.25) +
     xlab("ka cal BP") +
+    labs(x = "ka cal BP",
+         caption = "Atmospheric data from Reimer et al. (2020)") +
     theme_minlines() +
     theme(axis.title.y = element_blank(),
           axis.text.y = element_blank(),

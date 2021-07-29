@@ -5,6 +5,12 @@ library("patchwork")
 library("directlabels")
 library("gt")
 
+# Figure sizing for Elsevier journals
+# See https://www.elsevier.com/authors/policies-and-guidelines/artwork-and-media-instructions/artwork-sizing
+w1col <- 90
+w1.5col <- 140
+w2col <- 190
+
 # Figure A: Map of the southern Levant, showing sites used in the analysis.
 # (Generated in QGIS)
 
@@ -12,7 +18,7 @@ library("gt")
 # TODO: Broken
 figB <- plot_chronology(sites, radiocarbon_sum, cultural_periods)
 ggsave("analysis/figures/figB.pdf", figB, device = cairo_pdf,
-       width = 190, height = 110, units = "mm")
+       width = w2col, height = w2col * 2/3, units = "mm")
 
 # Figure C: Relative body size of gazelle through time, using all elements and
 #   measurements.

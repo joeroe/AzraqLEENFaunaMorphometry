@@ -1,8 +1,17 @@
 # MORPHOMETRIC DATA -----------------------------------------------------------
 
-# Need to set guess_max high because some columns start with many NAs
-# TODO: Be explicit
-read_csv("./analysis/data/ejordan_gazella_metrics.csv", guess_max = 10000) %>%
+read_csv("./analysis/data/ejordan_gazella_metrics.csv",
+         col_types = cols(
+           .default = col_double(),
+           Source = col_character(),
+           Site = col_character(),
+           Phase = col_character(),
+           Context = col_character(),
+           SiteCode = col_character(),
+           Specimen = col_character(),
+           Element = col_character(),
+           GD = col_number()
+         )) %>%
   filter(Element != "Navicular-cuboid") %>%
   filter(Element != "Patella") ->
   gazella

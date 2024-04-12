@@ -97,7 +97,7 @@ plot_mcts <- function(sim, y, chrono_scale, y_label = NA, consolidate = FALSE) {
 
   ggplot(sim, aesthetics) +
     geom_smooth(method = "gam", formula = y ~ s(x, bs = "cr"), se = FALSE,
-                n = 320, span = 1, colour = alpha("black", a), fullrange = TRUE) +
+                n = 320, span = 1, colour = alpha("black", a), fullrange = FALSE) +
     g +
     highlight_yd() +
     highlight_82k() +

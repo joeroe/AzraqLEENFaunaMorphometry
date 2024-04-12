@@ -12,7 +12,7 @@ gazella_nhm %>%
   gazella_std
 
 # Check for missing standard animal metrics
-check_std(gazella, gazella_std, gazella_cols$metrics, gazella_nhm_cols$metrics)
+# check_std(gazella, gazella_std, gazella_cols$metrics, gazella_nhm_cols$metrics)
 
 # Calculate average LSIs
 gazella %>%

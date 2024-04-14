@@ -1,0 +1,91 @@
+---
+title: Supplementary figures
+format: pdf
+---
+
+```{r setup}
+# TODO: fix rendering
+setwd("../")
+library(ejordanfaunamorph)
+source("analysis/0-data.R")
+source("analysis/1-standardisation.R")
+source("analysis/2-montecarlo.R")
+source("analysis/4-phalanx.R")
+source("analysis/5-dimorphism.R")
+w1col <- 90
+w1.5col <- 140
+w2col <- 190
+```
+
+## Effect of including/excluding phalanges
+
+```{r figS1}
+#| fig-cap: Distribution of log-standard index (LSI) values for gazelle with all elements (black line), only phalanges, or all elements except phalanges
+figS1
+```
+
+```{r figS2}
+#| fig-cap: Relative body size of gazelle through time, using all elements and measurements (black line, identical to figure 3 in main text), only phalanges (green line), or all elements except phalanges (red line)
+figS2
+```
+
+## Evidence of in-situ body size change
+
+```{r figS3}
+#| fig-cap: Comparison of Z distributions from adjacent periods in the same location
+gazella %>%
+  mutate(Site = replace(Site,
+                        SiteCode %in% c("WJ22_Upper", "WJ22_Middle", "WJ22_Lower",
+                                        "WJ6_Upper", "WJ8", "WJ7", "WJ13", "WJ25"),
+                        "Wadi Jilat")) %>%
+  mutate(Site = replace(Site,
+                        SiteCode %in% c("DHW_PPNB", "DHW_LN"),
+                        "Dhuweila")) %>%
+  mutate(Site = replace(Site,
+                        SiteCode %in% c("SHUB1_Early", "SHUB1_Late", "SHUB1_Final"),
+                        "Shubayqa 1")) %>%
+  filter(Site %in% c("Wadi Jilat", "Dhuweila", "Shubayqa 1")) %>%
+  mutate(Period = recode(SiteCode,
+                         WJ22_Upper = "Epipalaeolithic",
+                         WJ22_Middle = "Epipalaeolithic",
+                         WJ22_Lower = "Epipalaeolithic",
+                         WJ6_Upper = "Epipalaeolithic",
+                         WJ8 = "Epipalaeolithic",
+                         WJ7 = "Neolithic",
+                         WJ13 = "Neolithic",
+                         WJ25 = "Neolithic",
+                         DHW_PPNB = "PPNB",
+                         DHW_LN = "Late Neolithic",
+                         SHUB1_Early = "Early Natufian",
+                         SHUB1_Late = "Late/Final Natufian",
+                         SHUB1_Final = "Late/Final Natufian")) %>%
+  group_by(Period) %>%
+  mutate(midZ = median(Z)) ->
+  gazella_adj
+gazella_adj$Site <- factor(gazella_adj$Site, levels = c("Wadi Jilat",
+                                                        "Shubayqa 1",
+                                                        "Dhuweila"))
+gazella_adj$Period <- factor(gazella_adj$Period, levels = c("Neolithic",
+                                                            "Epipalaeolithic",
+                                                            "Late/Final Natufian",
+                                                            "Early Natufian",
+                                                            "Late Neolithic",
+                                                            "PPNB"))
+
+figS3 <- ggplot(gazella_adj, aes(x = Z, label = Period, colour = Period)) +
+  facet_wrap(vars(Site), nrow = 1) +
+  geom_density(fill = NA) +
+  scale_colour_manual(values = rep(c("#e41a1c", "#377eb8"), 3)) +
+  scale_x_continuous(limits = c(-4.5, 4.5), breaks = seq(-4, 4, by = 1)) +
+  labs(x = "Relative body size (Z)", y = NULL) +
+  theme_minlines()
+figS3 <- direct.label(figS3, method = list("top.bumptwice", fontfamily = "sans", cex = 0.65))
+figS3
+```
+
+## Evidence of sexual dimorphism
+
+```{r figS4}
+#| fig-cap: Distribution of gazelle scapula BG, showing sexual dimorphism
+figS4
+```

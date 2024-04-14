@@ -10,7 +10,18 @@
 gazella %>%
   filter(Element == "Scapula") %>%
   filter(!is.na(GLP) | !is.na(BG)) %>%
-  select(Site, SiteCode, Specimen, GLP, BG) ->
+  select(Site, SiteCode, Specimen, GLP, BG) |>
+  mutate(
+    Period = case_match(
+      SiteCode,
+      sites_early_epipal ~ "Early Epipalaeolithic",
+      sites_late_epipal ~ "Late Epipalaeolithic",
+      sites_early_neo ~ "Early Neolithic",
+      sites_late_neo ~ "Late Neolithic"
+    ),
+    Period = factor(Period, c("Early Epipalaeolithic", "Late Epipalaeolithic",
+                              "Early Neolithic", "Late Neolithic"))
+  ) ->
   gazella_dimorph
 
 # Sample sizes
@@ -18,48 +29,21 @@ gazella_dimorph %>%
   mutate(GLP = !is.na(GLP), BG = !is.na(BG)) %>%
   janitor::tabyl(GLP, BG)
 
-# Scatter plots by period
-gazella_dimorph %>%
-  mutate(Period = recode(SiteCode,
-                         "AQA" = "Early–Mid Epipal.",
-                         "AQB" = "Early–Mid Epipal.",
-                         "KHIV" = "Early–Mid Epipal.",
-                         "KHIV_A" = "Early–Mid Epipal.",
-                         "KHIV_B" = "Early–Mid Epipal.",
-                         "KHIV_C" = "Early–Mid Epipal.",
-                         "KHIV_D" = "Early–Mid Epipal.",
-                         "SHUB1_Early" = "Late Epipal.",
-                         "SHUB1_Late" = "Late Epipal.",
-                         "SHUB6_Early" = "Late Epipal.",
-                         "WJ13" = "Neolithic",
-                         "WJ22_Middle" = "Early–Mid Epipal.",
-                         "WJ22_Upper" = "Early–Mid Epipal.",
-                         "WJ6_Upper" = "Early–Mid Epipal.",
-                         "WJ7" = "Neolithic")) %>%
-  ggplot(aes(x = GLP, y = BG, colour = Period)) +
-  geom_point() +
-  scale_colour_brewer(type = "qual", palette = "Set1") +
-  theme_minlines()
-
 # BG Histogram by period
 
-gazella_dimorph %>%
-  mutate(Period = recode(SiteCode,
-                         "AQA" = "Early Epipal.",
-                         "AQB" = "Early Epipal.",
-                         "KHIV" = "Early Epipal.",
-                         "KHIV_A" = "Early Epipal.",
-                         "KHIV_B" = "Early Epipal.",
-                         "KHIV_C" = "Early Epipal.",
-                         "KHIV_D" = "Early Epipal.",
-                         "SHUB1_Early" = "Mid–Late Epipal.",
-                         "SHUB1_Late" = "Mid–Late Epipal.",
-                         "SHUB6_Early" = "Mid–Late Epipal.",
-                         "WJ13" = "Neolithic",
-                         "WJ22_Middle" = "Mid–Late Epipal.",
-                         "WJ22_Upper" = "Mid–Late Epipal.",
-                         "WJ6_Upper" = "Early Epipal.",
-                         "WJ7" = "Neolithic")) %>%
+figS4 <- gazella_dimorph %>%
   ggplot(aes(x = BG, fill = Period)) +
   geom_histogram(binwidth = 0.2) +
-  theme_minlines()
+  scale_colour_brewer(palette = "PuOr") +
+  theme_minlines() +
+  theme(legend.position = "bottom")
+
+# Scatter plots by period
+# TODO: Add to supplement (difference to fig. 6 in the main text is that is uses all sites)
+gazella_dimorph %>%
+  ggplot(aes(x = GLP, y = BG, colour = Period)) +
+  geom_point() +
+  scale_colour_brewer(palette = "PuOr") +
+  theme_minlines() +
+  theme(legend.position = "bottom")
+

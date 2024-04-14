@@ -40,6 +40,7 @@ bad_metrics <- c("GLm", "SH", "SB", "GLpe", "GL", "MHP", "MWP", "LG", "LO", "HTC
 
 gazella <- exclude_lengths(gazella, bad_metrics, gazella_cols$metadata)
 gazella_nhm <- exclude_lengths(gazella_nhm, bad_metrics, gazella_nhm_cols$metadata)
+lepus_all <- lepus
 lepus <- exclude_lengths(lepus, bad_metrics, lepus_cols$metadata)
 vulpes <- exclude_lengths(vulpes, bad_metrics, vulpes_cols$metadata)
 
@@ -81,8 +82,18 @@ read_csv("analysis/data/ejordan_sites.csv") %>%
 # No reliable radiocarbon dates for KHIV C
 sites <- filter(sites, SiteCode != "KHIV_C")
 gazella$SiteCode[gazella$SiteCode == "KHIV_C"] <- "KHIV"
+lepus_all$SiteCode[lepus_all$SiteCode == "KHIV_C"] <- "KHIV"
 lepus$SiteCode[lepus$SiteCode == "KHIV_C"] <- "KHIV"
 vulpes$SiteCode[vulpes$SiteCode == "KHIV_C"] <- "KHIV"
+
+# Coarse site chronology
+sites_early_epipal <- c("AQA", "AQB", "AQD", "UW18_Upper", "KHIV", "KHIV_A",
+                        "KHIV_B", "KHIV_D", "WJ6_Upper", "WJ22_Lower", "WJ8",
+                        "WJ22_Middle", "AZ17")
+sites_late_epipal <- c("SHUB1_Early", "WJ22_Upper", "AZ18", "SHUB1_Late",
+                       "SHUB1_Final")
+sites_early_neo <- c("WJ7", "DHW_PPNB")
+sites_late_neo <- c("WJ25", "WJ13", "BQ27", "JN", "DHW_LN")
 
 # Cultural chronology (after Garrard 2013)
 data.frame(period = c("Initial Epipal",

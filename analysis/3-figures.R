@@ -47,29 +47,37 @@ ggsave("analysis/figures/fig4.png", fig4,
 # Figure 5: Distributions of relative body size at all sites, arranged by date.
 #   Only sites with N > 25 are included.
 gazella %>%
-  mutate(Site = as_factor(Site)) %>%
-  group_by(Site) %>%
-  mutate(N = n(),
-         midZ = median(Z, na.rm = TRUE)) %>%
-  ungroup() %>%
-  mutate(Site = fct_relevel(Site, rev(sites$Site))) %>%
-  # mutate(Site = fct_relabel(Site, ~paste0(.x, " [N=", N, "]"))) %>%
-  filter(N > 25) %>%
-  ggplot(aes(x = Z, y = Site, group = Site)) +
-  facet_wrap(vars(Period), ncol = 1, scales = "free_y") +
-  ggridges::geom_density_ridges(quantile_lines = TRUE, quantiles = 2) +
-  scale_y_discrete(expand = c(0,0)) +
+  mutate(
+    Period = case_match(
+      SiteCode,
+      sites_early_epipal ~ "Early Epipalaeolithic",
+      sites_late_epipal ~ "Late Epipalaeolithic",
+      sites_early_neo ~ "Early Neolithic",
+      sites_late_neo ~ "Late Neolithic"
+    ),
+    Period = factor(Period, rev(c("Early Epipalaeolithic", "Late Epipalaeolithic",
+                                  "Early Neolithic", "Late Neolithic")))
+  ) %>%
+  left_join(sites, by = "Site") %>%
+  add_count(Site) %>%
+  filter(n > 25) %>%
+  ggplot(aes(x = Z, y = factor(Site, rev(sites$Site)))) +
+  facet_grid(rows = vars(Period), scales = "free_y", space = "free_y") +
+  ggridges::geom_density_ridges(panel_scaling = FALSE, quantile_lines = TRUE, quantiles = 2) +
   scale_x_continuous(limits = c(-3, 3)) +
   labs(x = "Relative body size (Z)", y = NULL) +
   theme_minlines() +
-  theme(axis.text.y = element_text(hjust = 0, vjust = 0),
-        axis.ticks.x = element_blank(),
-        axis.ticks.y = element_blank(),
-        panel.spacing = unit(0, "mm"),
-        panel.border = element_blank()) ->
+  theme(
+    axis.ticks.x = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.spacing = unit(0, "mm"),
+    panel.border = element_blank()
+  ) ->
   fig5
 
 ggsave("analysis/figures/fig5.pdf", fig5, device = cairo_pdf,
+       width = w1col, height = w1col * 1.5, units = "mm")
+ggsave("analysis/figures/fig5.png", fig5,
        width = w1col, height = w1col * 1.5, units = "mm")
 
 # Figure 6: scatterplot of gazelle scapula BG vs. GLP from KHIV (all phases)

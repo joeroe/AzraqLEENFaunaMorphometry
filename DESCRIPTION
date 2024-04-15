@@ -18,10 +18,13 @@ Imports:
     rcarbon,
     sf,
     rnaturalearth,
-    patchwork,
     ggrepel,
     ggridges,
-    webshot,
+    webshot
+Suggests:
+    patchwork,
     directlabels,
-    gt
+    gt,
+    janitor,
+    bookdown
 RoxygenNote: 6.1.1

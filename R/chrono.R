@@ -4,7 +4,8 @@ calibrate_and_sum_c14 <- function(sites, radiocarbon) {
   # Calibrate
   with(radiocarbon,
        rcarbon::calibrate(cra, errors = error, id = lab_id,
-                          calCurves = "intcal20", normalised = TRUE)
+                          calCurves = "intcal20", normalised = TRUE,
+                          verbose = FALSE)
   ) -> cal_dates
 
   # Sum
@@ -15,9 +16,10 @@ calibrate_and_sum_c14 <- function(sites, radiocarbon) {
       melted <- reshape2::melt(cds$grids, id.vars = NULL)
       min_bp <- min(melted[melted$variable == "calBP", "value"])
       max_bp <- max(melted[melted$variable == "calBP", "value"])
-      spd <- rcarbon::spd(cds, timeRange = c(max_bp, min_bp),
+      invisible(spd <- rcarbon::spd(cds, timeRange = c(max_bp, min_bp),
                           datenormalised = TRUE,
-                          spdnormalised = TRUE)
+                          spdnormalised = TRUE,
+                          verbose = FALSE))
       return(spd$grid)
     }
     else {

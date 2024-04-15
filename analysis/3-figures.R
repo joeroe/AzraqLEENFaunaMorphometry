@@ -144,13 +144,6 @@ ggsave("analysis/figures/fig8.pdf", fig8, device = cairo_pdf,
 ggsave("analysis/figures/fig8.png", fig8,
        width = w1col, height = w1col * 2, units = "mm")
 
-# Figure G: Relative body size of Vulpes through time, using all elements and
-#   measurements
-# TODO: move to supplement
-figG <- plot_mcts(vulpes_sim, Z, climate_periods, "Relative body size (Z)",
-                  consolidate = TRUE)
-ggsave("analysis/figures/figG.pdf", figG, device = cairo_pdf,
-       width = 190, height = 50, units = "mm")
 
 # Figure 9: z score vulpes histogram
 vulpes |>

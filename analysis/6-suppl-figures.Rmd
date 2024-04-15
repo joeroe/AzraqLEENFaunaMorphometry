@@ -1,10 +1,15 @@
 ---
 title: Supplementary figures
-format: pdf
+output: bookdown::html_document2
 ---
-
+```{r opts, echo=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
 ```{r setup}
-# TODO: fix rendering
 setwd("../")
 library(ejordanfaunamorph)
 source("analysis/0-data.R")
@@ -12,12 +17,23 @@ source("analysis/1-standardisation.R")
 source("analysis/2-montecarlo.R")
 source("analysis/4-phalanx.R")
 source("analysis/5-dimorphism.R")
+library("patchwork")
+library("directlabels")
+library("gt")
 w1col <- 90
 w1.5col <- 140
 w2col <- 190
 ```
 
-## Effect of including/excluding phalanges
+# *Vulpes*
+
+```{r figS0}
+#| fig-cap: Relative body size of fox through time, using all elements and measurements, but note N=116
+plot_mcts(vulpes_sim, Z, climate_periods, "Relative body size (Z)",
+          consolidate = TRUE)
+```
+
+# Effect of including/excluding phalanges
 
 ```{r figS1}
 #| fig-cap: Distribution of log-standard index (LSI) values for gazelle with all elements (black line), only phalanges, or all elements except phalanges
@@ -29,7 +45,7 @@ figS1
 figS2
 ```
 
-## Evidence of in-situ body size change
+# Evidence of in-situ body size change
 
 ```{r figS3}
 #| fig-cap: Comparison of Z distributions from adjacent periods in the same location
@@ -83,9 +99,14 @@ figS3 <- direct.label(figS3, method = list("top.bumptwice", fontfamily = "sans",
 figS3
 ```
 
-## Evidence of sexual dimorphism
+# Evidence of sexual dimorphism
 
 ```{r figS4}
 #| fig-cap: Distribution of gazelle scapula BG, showing sexual dimorphism
 figS4
+```
+
+```{r figS5}
+#| fig-cap: Distribution of gazelle scapula GLP, showing sexual dimorphism (differs from figure 6 in the main text in that it includes all assemblages, even those with small sample sizes)
+figS5
 ```

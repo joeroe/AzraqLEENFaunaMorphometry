@@ -190,6 +190,7 @@ sf::read_sf("./analysis/data/iucn_ranges.gpkg") %>%
   iucn_ranges
 
 # Base map (Natural Earth, https://www.naturalearthdata.com/)
-sf::st_read("./analysis/data/ne_110m_land_afroeurasia.gpkg", "ne_110m_land_afroeurasia") %>%
+sf::st_read("./analysis/data/ne_110m_land_afroeurasia.gpkg",
+            "ne_110m_land_afroeurasia", quiet = TRUE) %>%
   sf::st_transform(laea_damascus) ->
   ne_afroeurasia

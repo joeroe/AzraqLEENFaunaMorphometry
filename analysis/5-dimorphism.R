@@ -39,8 +39,7 @@ figS4 <- gazella_dimorph %>%
   theme(legend.position = "bottom")
 
 # Scatter plots by period
-# TODO: Add to supplement (difference to fig. 6 in the main text is that is uses all sites)
-gazella_dimorph %>%
+figS5 <- gazella_dimorph %>%
   ggplot(aes(x = GLP, y = BG, colour = Period)) +
   geom_point() +
   scale_colour_brewer(palette = "PuOr") +

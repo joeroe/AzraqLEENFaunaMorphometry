@@ -35,6 +35,16 @@ gazella_nhm_cols <- list(
   metrics = colnames(gazella_nhm)[7:17]
 )
 
+# Count number of samples (before excluding)
+n_gazella <- nrow(gazella)
+n_gazella_metrics <- sum(!is.na(gazella[,gazella_cols$metrics]))
+
+n_lepus <- nrow(lepus)
+n_lepus_metrics <- sum(!is.na(lepus[,lepus_cols$metrics]))
+
+n_vulpes <- nrow(vulpes)
+n_vulpes_metrics <- sum(!is.na(vulpes[,vulpes_cols$metrics]))
+
 # Exclude lengths (see Meadows 1999)
 bad_metrics <- c("GLm", "SH", "SB", "GLpe", "GL", "MHP", "MWP", "LG", "LO", "HTC")
 
@@ -48,7 +58,6 @@ gazella_cols$metrics <- setdiff(gazella_cols$metrics, bad_metrics)
 gazella_nhm_cols$metrics <- setdiff(gazella_nhm_cols$metrics, bad_metrics)
 lepus_cols$metrics <- setdiff(lepus_cols$metrics, bad_metrics)
 vulpes_cols$metrics <- setdiff(vulpes_cols$metrics, bad_metrics)
-
 
 
 # SITE AND RADIOCARBON DATA ------------------------------------------------

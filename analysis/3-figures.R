@@ -18,12 +18,16 @@ w2col <- 190
 fig2 <- plot_chronology(sites, radiocarbon_sum, cultural_periods)
 ggsave("analysis/figures/fig2.pdf", fig2, device = cairo_pdf,
        width = w2col, height = w2col * 2/3, units = "mm")
+ggsave("analysis/figures/fig2.png", fig2,
+       width = w2col, height = w2col * 2/3, units = "mm")
 
 # Figure 3: Relative body size of gazelle through time, using all elements and
 #   measurements.
 fig3 <- plot_mcts(gazella_sim, Z, climate_periods, "Relative body size (Z)",
                   consolidate = TRUE)
 ggsave("analysis/figures/fig3.pdf", fig3, device = cairo_pdf,
+        width = w2col, height = w2col * 1/3, units = "mm")
+ggsave("analysis/figures/fig3.png", fig3,
         width = w2col, height = w2col * 1/3, units = "mm")
 
 # Figure 4: Relative body size of gazelle through time, using specific element
@@ -36,6 +40,8 @@ fig4b <- plot_mcts(filter(gazella_sim, Element == "Astragalus"), Bd,
 
 fig4 <- fig4a / fig4b
 ggsave("analysis/figures/fig4.pdf", fig4, device = cairo_pdf,
+       width = w2col, height = w2col * 2/3, units = "mm")
+ggsave("analysis/figures/fig4.png", fig4,
        width = w2col, height = w2col * 2/3, units = "mm")
 
 # Figure 5: Distributions of relative body size at all sites, arranged by date.
@@ -50,6 +56,7 @@ gazella %>%
   # mutate(Site = fct_relabel(Site, ~paste0(.x, " [N=", N, "]"))) %>%
   filter(N > 25) %>%
   ggplot(aes(x = Z, y = Site, group = Site)) +
+  facet_wrap(vars(Period), ncol = 1, scales = "free_y") +
   ggridges::geom_density_ridges(quantile_lines = TRUE, quantiles = 2) +
   scale_y_discrete(expand = c(0,0)) +
   scale_x_continuous(limits = c(-3, 3)) +
@@ -66,7 +73,6 @@ ggsave("analysis/figures/fig5.pdf", fig5, device = cairo_pdf,
        width = w1col, height = w1col * 1.5, units = "mm")
 
 # Figure 6: scatterplot of gazelle scapula BG vs. GLP from KHIV (all phases)
-# TODO
 fig6 <- gazella |>
   filter(str_starts(Site, "Kharaneh IV")) |>
   ggplot(aes(GLP, BG)) +
@@ -77,12 +83,16 @@ fig6 <- gazella |>
 
 ggsave("analysis/figures/fig6.pdf", fig6, device = cairo_pdf,
        width = w1col, height = w1col, units = "mm")
+ggsave("analysis/figures/fig6.png",
+       width = w1col, height = w1col, units = "mm")
 
 # Figure 7: Relative body size of Lepus through time, using all elements and
 #   measurements.
 fig7 <- plot_mcts(lepus_sim, Z, climate_periods, "Relative body size (Z)",
                   consolidate = TRUE)
 ggsave("analysis/figures/fig7.pdf", fig7, device = cairo_pdf,
+       width = w2col, height = w2col * 1/3, units = "mm")
+ggsave("analysis/figures/fig7.png", fig7,
        width = w2col, height = w2col * 1/3, units = "mm")
 
 # Figure 8: z score hare elements
@@ -123,10 +133,12 @@ fig8b <- lepus_all |>
 fig8 <- fig8a / fig8b
 ggsave("analysis/figures/fig8.pdf", fig8, device = cairo_pdf,
        width = w1col, height = w1col * 2, units = "mm")
+ggsave("analysis/figures/fig8.png", fig8,
+       width = w1col, height = w1col * 2, units = "mm")
 
 # Figure G: Relative body size of Vulpes through time, using all elements and
 #   measurements
-# TODO: supplement?
+# TODO: move to supplement
 figG <- plot_mcts(vulpes_sim, Z, climate_periods, "Relative body size (Z)",
                   consolidate = TRUE)
 ggsave("analysis/figures/figG.pdf", figG, device = cairo_pdf,
@@ -155,6 +167,8 @@ vulpes |>
 
 ggsave("analysis/figures/fig9.pdf", fig9, device = cairo_pdf,
        width = w1col, height = w1col, units = "mm")
+ggsave("analysis/figures/fig9.png", fig9,
+       width = w1col, height = w1col, units = "mm")
 
 # Figure 10: maps of modern biogeography
 fig10 <- ggplot() +
@@ -173,6 +187,8 @@ fig10 <- ggplot() +
         axis.text = element_blank(),
         axis.ticks = element_blank())
 ggsave("analysis/figures/fig10.pdf", fig10, device = cairo_pdf,
+       width = w1.5col, height = w1.5col * 2/3, units = "mm")
+ggsave("analysis/figures/fig10.png", fig10,
        width = w1.5col, height = w1.5col * 2/3, units = "mm")
 
 

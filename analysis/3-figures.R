@@ -123,17 +123,18 @@ fig8a <- lepus_all |>
   mutate(GL = as.numeric(GL)) |>
   ggplot(aes(GL, GB, colour = Period)) +
   geom_point() +
-  scale_colour_brewer(palette = "PuOr") +
+  scale_colour_brewer(palette = "PuOr", guide = guide_none()) +
   labs(x = "GL (mm)", y = "GB (mm)") +
   theme_minlines() +
   theme(panel.grid.major.x = element_blank(), legend.position = "bottom")
 
-# TODO: problem - doesn't match draft! Possibly because we've since removed SHUB6??
 fig8b <- lepus_all |>
   filter(Element == "Humerus") |>
-  ggplot(aes(Bd, fill = Period)) +
+  ggplot(aes(Bd, fill = Period,  colour = Period)) +
   geom_histogram(binwidth = 0.3) +
-  scale_fill_brewer(palette = "PuOr") +
+  # geom_density(position = "stack", bw = "SJ") +
+  scale_fill_brewer(palette = "PuOr", guide = guide_legend(ncol = 2)) +
+  scale_colour_brewer(palette = "PuOr", guide = guide_legend(ncol = 2)) +
   labs(x = "Bd (mm)") +
   theme_minlines() +
   theme(panel.grid.major.x = element_blank(), legend.position = "bottom")
@@ -158,9 +159,11 @@ vulpes |>
     Period = factor(Period, c("Early Epipalaeolithic", "Late Epipalaeolithic",
                               "Early Neolithic", "Late Neolithic"))
   ) |>
-  ggplot(aes(Z, fill = Period)) +
+  ggplot(aes(Z, fill = Period, colour = Period)) +
   geom_histogram(binwidth = 0.3) +
-  scale_fill_brewer(palette = "PuOr") +
+  # geom_density(position = "stack", bw = "SJ") +
+  scale_fill_brewer(palette = "PuOr", guide = guide_legend(ncol = 2)) +
+  scale_colour_brewer(palette = "PuOr", guide = guide_legend(ncol = 2)) +
   labs(x = "Relative body size (Z)", y = "N") +
   theme_minlines() +
   theme(panel.grid.major.x = element_blank(), legend.position = "bottom") ->

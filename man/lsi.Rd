@@ -7,9 +7,9 @@
 lsi(obs, std, obs_metadata, std_metadata)
 }
 \arguments{
-\item{obs}{Tibble of observed animal measurements}
+\item{obs}{Data frame or tibble of observed animal measurements}
 
-\item{std}{Tibble of standard animal measurements}
+\item{std}{Data frame or tibble of standard animal measurements}
 
 \item{check}{TRUE (default) will print a warning when a measurement in obs is
 not matched in std}

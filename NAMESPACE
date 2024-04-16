@@ -3,6 +3,8 @@
 export(calibrate_and_sum_c14)
 export(check_std)
 export(exclude_lengths)
+export(highlight_82k)
+export(highlight_yd)
 export(kacalbp_labels)
 export(lsi)
 export(plot_chronology)

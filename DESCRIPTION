@@ -1,13 +1,29 @@
-Package: ejordanfaunamorph
+Package: AzraqLEENFaunaMorphometry
 Type: Package
-Title: Eastern Jordan Palaeofaunal Morphometrics
+Title: Osteometric Analysis of Mammalian Fauna from the Late Epipalaeolithic
+    and Early Neolithic Azraq Basin
 Version: 0.1.0
-Authors@R: person("Joe", "Roe", email = "joe@joeroe.io",
-            role = c("aut", "cre")) 
-Description: A morphometric analysis of faunal remains ('Gazella sp.' 
-    and ''Lepus sp.'') from Epipalaeolithic and Neolithic archaeological sites
-    in the eastern Jordanian 'badia', c. 25 – 7.5 ka. This package contains the
-    supplementary code for the paper CITATION.
+Authors@R: c(
+    person(family = "Roe",
+           given = "Joe",
+           role = c("aut", "cre"),
+           email = "joe@joeroe.io",
+           comment = c(ORCID = "0000-0002-1011-1244")),
+    person(family = "Yeomans",
+           given = "Lisa",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-5180-8902")),
+    person(family = "Martin",
+           given = "Louise",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-2083-813X"))
+  )
+Description: Compendium of data and code accompanying our paper 'Late 
+   Pleistocene-Holocene mammalian body size change in Jordan’s Azraq Basin - a 
+   case for climate driven species distribution shifts'. It describes an
+   osteometric analysis of faunal remains ('Gazella sp.', 'Lepus sp.', and 
+   'Vulpes sp.') from Late Epipalaeolithic and Early Neolithic archaeological
+   sites in the eastern Jordanian 'badia', c. 25 – 7.5 ka.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -27,4 +43,4 @@ Suggests:
     gt,
     janitor,
     bookdown
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.3

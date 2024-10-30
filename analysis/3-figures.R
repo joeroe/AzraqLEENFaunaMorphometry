@@ -4,6 +4,8 @@
 library("patchwork")
 library("directlabels")
 library("gt")
+library("ggpattern")
+library("sf")
 
 # Figure sizing for Elsevier journals
 # See https://www.elsevier.com/authors/policies-and-guidelines/artwork-and-media-instructions/artwork-sizing
@@ -175,13 +177,21 @@ ggsave("analysis/figures/fig9.png", fig9,
        width = w1col, height = w1col, units = "mm")
 
 # Figure 10: maps of modern biogeography
+basin_azraq <- read_sf("analysis/data/basins.gpkg")
 fig10 <- ggplot() +
   geom_sf(data = ne_afroeurasia, fill = "white") +
-  geom_sf(data = iucn_ranges, mapping = aes(fill = binomial), alpha = 0.7, colour = NA) +
-  scale_fill_manual(values = rep(c("#e41a1c", "#377eb8"), 3), name = NULL) +
+  geom_sf(data = basin_azraq, fill = "#e41a1c") +
+  geom_sf_pattern(data = iucn_ranges,
+                  mapping = aes(pattern_angle = binomial),
+                  fill = NA, colour = "grey",
+                  pattern_fill = "black", pattern_colour = NA,
+                  pattern_spacing = 0.01) +
+  # scale_colour_manual(values = rep(c("#e41a1c", "#377eb8"), 3), name = NULL) +
+  # scale_pattern_fill_manual(values = rep(c("#e41a1c", "#377eb8"), 3), name = NULL) +
+  scale_pattern_angle_manual(values = rep(c(45, -45), 3), name = NULL) +
   scale_x_continuous(breaks = seq(from = -180, to = 180, by = 30)) +
   scale_y_continuous(breaks = seq(from = 80, to = -80, by = -30)) +
-  # coord_sf() +
+  coord_sf(xlim = c(25, 65), ylim = c(10, 50), default_crs = 4326) +
   facet_wrap(vars(genus), nrow = 1) +
   theme_minlines() +
   theme(strip.text = element_text(face = "italic"),

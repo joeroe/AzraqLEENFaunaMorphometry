@@ -62,8 +62,19 @@ gazella %>%
   ) %>%
   left_join(sites, by = "Site") %>%
   add_count(Site) %>%
-  filter(n > 25) %>%
-  ggplot(aes(x = Z, y = factor(Site, rev(sites$Site)))) +
+  filter(n > 25) |>
+  group_by(Site) |>
+  transmute(
+    Site = factor(Site, rev(sites$Site)),
+    Z, Period,
+    n = n(),
+    skew = format(moments::skewness(Z, na.rm = TRUE), digits = 2),
+    kurtosis = format(moments::kurtosis(Z, na.rm = TRUE), digits = 2),
+    label = fct_relabel(Site, function(x, n, s, k) {
+      paste0(x, "\n", "N=", n[1], ", sk=", s[1], ", K=", k[1])
+    }, n = n, s = skew, k = kurtosis)
+  ) %>%
+  ggplot(aes(x = Z, y = label)) +
   facet_grid(rows = vars(Period), scales = "free_y", space = "free_y") +
   ggridges::geom_density_ridges(panel_scaling = FALSE, quantile_lines = TRUE, quantiles = 2) +
   scale_x_continuous(limits = c(-3, 3)) +

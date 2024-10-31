@@ -48,7 +48,7 @@ ggsave("analysis/figures/fig4.png", fig4,
 
 # Figure 5: Distributions of relative body size at all sites, arranged by date.
 #   Only sites with N > 25 are included.
-gazella %>%
+fig5_data <- gazella %>%
   mutate(
     Period = case_match(
       SiteCode,
@@ -62,25 +62,24 @@ gazella %>%
   ) %>%
   left_join(sites, by = "Site") %>%
   add_count(Site) %>%
-  filter(n > 25) |>
-  group_by(Site) |>
+  filter(n > 25) %>%
+  group_by(Site) %>%
   transmute(
     Site = factor(Site, rev(sites$Site)),
     Z, Period,
     n = n(),
     skew = format(moments::skewness(Z, na.rm = TRUE), digits = 2),
-    kurtosis = format(moments::kurtosis(Z, na.rm = TRUE), digits = 2)
-  ) |>
-  ungroup() |>
-  mutate(
-    label = fct_relabel(Site, function(x, n, s, k) {
-      paste0(x, "\n", "N=", n[1], ", sk=", s[1], ", K=", k[1])
-    }, n = n, s = skew, k = kurtosis)
-  ) %>%
-  ggplot(aes(x = Z, y = label)) +
+    kurtosis = format(moments::kurtosis(Z, na.rm = TRUE), digits = 2),
+    label = paste0(Site, "\n", "N=", n, ", sk=", skew, ", K=", kurtosis)
+  )
+fig5_labels <- select(fig5_data, Site, label) |>
+  distinct()
+
+ggplot(fig5_data, aes(x = Z, y = Site)) +
   facet_grid(rows = vars(Period), scales = "free_y", space = "free_y") +
   ggridges::geom_density_ridges(panel_scaling = FALSE, quantile_lines = TRUE, quantiles = 2) +
   scale_x_continuous(limits = c(-3, 3)) +
+  scale_y_discrete(labels = \(x) fig5_labels[match(x, fig5_labels$Site),]$label) +
   labs(x = "Relative body size (Z)", y = NULL) +
   theme_minlines() +
   theme(

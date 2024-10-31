@@ -69,7 +69,10 @@ gazella %>%
     Z, Period,
     n = n(),
     skew = format(moments::skewness(Z, na.rm = TRUE), digits = 2),
-    kurtosis = format(moments::kurtosis(Z, na.rm = TRUE), digits = 2),
+    kurtosis = format(moments::kurtosis(Z, na.rm = TRUE), digits = 2)
+  ) |>
+  ungroup() |>
+  mutate(
     label = fct_relabel(Site, function(x, n, s, k) {
       paste0(x, "\n", "N=", n[1], ", sk=", s[1], ", K=", k[1])
     }, n = n, s = skew, k = kurtosis)

@@ -1,12 +1,8 @@
-# Osteometric Analysis of Mammalian Fauna from the Late Epipalaeolithic and Early Neolithic Azraq Basin
-
-Joe Roe, University of Bern  
-Lisa Yeomans, University of Copenhagen  
-Louise Martin, University College London
+# Data and code for 'Late Pleistocene-Holocene mammalian body size change in Jordan’s Azraq Basin: a case for climate driven species distribution shifts'
 
 This [research compendium](https://research-compendium.science/) contains the data and code for an osteometric analysis of faunal remains (*Gazella sp.*, *Lepus sp.*, and  *Vulpes sp.*) from Late Epipalaeolithic and Early Neolithic archaeological sites in the eastern Jordanian *badia*, c. 25 – 7.5 ka. It accompanies our paper:
 
-> Martin, L., Roe, J. and Yeomans, L. 2024. Late Pleistocene-Holocene mammalian body size change in Jordan’s Azraq Basin: a case for climate driven species distribution shifts. Paper submitted for publication.
+> Martin, L., Roe, J. and Yeomans, L. 2025. Late Pleistocene-Holocene mammalian body size change in Jordan’s Azraq Basin: a case for climate driven species distribution shifts. *Quaternary Science Reviews* 350: 109147. <https://doi.org/10.1016/j.quascirev.2024.109147>
 
 ## Usage
 

@@ -1,8 +1,7 @@
 Package: AzraqLEENFaunaMorphometry
 Type: Package
-Title: Osteometric Analysis of Mammalian Fauna from the Late Epipalaeolithic
-    and Early Neolithic Azraq Basin
-Version: 0.1.0
+Title: Data and code for 'Late Pleistocene-Holocene mammalian body size change in Jordan’s Azraq Basin - a case for climate driven species distribution shifts'
+Version: 1.0.0
 Authors@R: c(
     person(family = "Roe",
            given = "Joe",
